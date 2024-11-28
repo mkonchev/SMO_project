@@ -9,11 +9,15 @@ class Order:
         self.source_id = source_id
         self.time = time
 
-    def get_order_id(self) -> int:
+    def get_id(self) -> int:
         return self.id
 
     def get_source_id(self) -> int:
         return self.source_id
+
+    def get_full_id(self) -> str:
+        str_id = str(self.id) + '.' + str(self.source_id)
+        return str_id
 
     def get_time(self) -> float:
         return self.time
