@@ -1,4 +1,4 @@
-from device import Device
+from src.device_dir.device import Device
 from src.order_dir.order import Order
 
 

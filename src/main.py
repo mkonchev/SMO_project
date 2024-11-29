@@ -4,8 +4,9 @@ from random import random
 from src.buffer_dir.buffer import Buffer
 from src.buffer_dir.buffer_item import BufferItem
 from src.order_dir.order import Order
-from src.order_dir.order_list import OrderList
-
+from src.source_dir.source_list import SourceList
+from src.source_dir.source import Sourse
+from src.device_dir.device_list import DeviceList
 
 if __name__ == '__main__':
     num_of_orders = 1000
@@ -17,6 +18,14 @@ if __name__ == '__main__':
     b = 1.5  # для равномерного распределения источников
     mode = True  # True - пошаговый    False - автоматический
 
-    if mode == True:
-        source_list = So
+    source_list = SourceList(num_of_sources, a, b)
+    device_list = DeviceList(num_of_devices, lambda_, mode)
+    buffer = Buffer(buffer_capacity)
+    order_list = [source.generate_order() for source in source_list]
+    gen_orders = 0
+    time = 0
+
+    if not mode:
+        while gen_orders < num_of_orders:
+            print('Календарь событий:')
 

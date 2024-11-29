@@ -1,4 +1,4 @@
-from source import Sourse
+from src.source_dir.source import Sourse
 
 
 class SourceList(object):
