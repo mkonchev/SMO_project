@@ -22,3 +22,7 @@ class DeviceList:
     def order_to_device(self, order: Order, time: float):
         self.first_device().start_handle_order(order, time)
 
+    def manage_finished_devices(self, time: float) -> None:
+        for device in sorted(self.device_list, key=lambda device_: device.get_end_time()):
+            if device.is_ready() == False and device.get_end_time() < time:
+                device.end_handle_order()

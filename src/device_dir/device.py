@@ -56,5 +56,11 @@ class Device:
         if self.mode:
             print(f'Заявка {self.order.get_full_id()} обработана в {self.get_end_time()}'
                   f' прибором {self.get_device_id()}')
-        self.total_time =
+        self.ready = True
+        self.start_time = 0
+        self.end_time = 0
+        self.order = None
+        self.total_orders += 1
+
+
 

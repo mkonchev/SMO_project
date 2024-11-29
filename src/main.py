@@ -17,7 +17,6 @@ if __name__ == '__main__':
     b = 1.5  # для равномерного распределения источников
     mode = True  # True - пошаговый    False - автоматический
 
-
-
-    # if mode == True:
+    if mode == True:
+        source_list = So
 
