@@ -17,7 +17,7 @@ if __name__ == '__main__':
     lambda_ = 1.3  # Для экспоненциального распределения времени обслуживания
     a = 2  # для равномерного распределения источников
     b = 1.5  # для равномерного распределения источников
-    mode = True  # True - пошаговый    False - автоматический
+    mode = False  # True - пошаговый    False - автоматический
 
     # source_list = SourceList(num_of_sources, a, b)
     # device_list = DeviceList(num_of_devices, lambda_, mode)
@@ -33,7 +33,7 @@ if __name__ == '__main__':
                       buffer_capacity,
                       lambda_, a, b, mode)
     if mode:
-        model.auto_sim()
-    else:
         model.step_sim()
+    else:
+        model.auto_sim()
 
