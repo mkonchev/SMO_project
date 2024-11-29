@@ -8,7 +8,7 @@ pd.set_option('display.width', 1000)
 pd.set_option('display.float_format', '{:.6f}'.format)
 
 
-class Data:
+class Table:
     def __init__(self, source_count, mode) -> None:
         self.source_list_statistics_df = pd.DataFrame.from_records([
             {

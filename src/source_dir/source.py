@@ -6,7 +6,7 @@ from src.order_dir.order import Order
 class Sourse:
     """   Источник заявки   """
     id: int
-    order_count: int
+    order_count: int = 0
     a: int
     b: int
     prev_gen_time: float
@@ -26,7 +26,7 @@ class Sourse:
     def get_gen_order_count(self):
         return self.order_count
 
-    def order_generate(self):
+    def order_generate(self) -> Order:
         self.prev_gen_time = (self.b - self.a) * rnd.random() + self.a
         order = Order(self.order_count, self.id, self.prev_gen_time)
         self.order_count = self.order_count+1
